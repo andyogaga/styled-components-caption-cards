@@ -1,5 +1,5 @@
 import { callApi } from "../../utils"
-import {CREATE_CAPTION, GET_CAPTIONS} from '../../utils/constants'
+import {CREATE_CAPTION, GET_CAPTIONS, ADD_TAG} from '../../utils/constants'
 
 export const createCaption = (caption, tags, cb) => async dispatch => {
   try {
@@ -39,10 +39,36 @@ export const getCaptions =  cb => async dispatch => {
       
       if(res && res.status === "success"){
         const {data: {captions}} = res
-        console.log(captions)
         dispatch({
           type: GET_CAPTIONS,
           payload: captions
+        })
+      }
+  } catch (error) {
+    console.log(error)
+  }finally{
+    cb()
+  }
+}
+
+export const getCaptionByTagId =  (id, cb) => async dispatch => {
+  try {
+      const res = await callApi(`/caption/withTag?tagId=${id}`, null, 'GET')
+      if(res && res.status === "success"){
+        const {data: {captions, tag}} = res
+        const newCaptions = captions.map((caption, i) => {
+          return {
+            id: i,
+            caption
+          }
+        })
+        dispatch({
+          type: GET_CAPTIONS,
+          payload: newCaptions
+        })
+        dispatch({
+          type: ADD_TAG,
+          payload: tag
         })
       }
   } catch (error) {

@@ -1,13 +1,14 @@
-import { GET_ACTIVE_TAGS, CLEAR_TAGS, ADD_TAG, REMOVE_TAG } from "../../utils/constants";
+import { GET_TAGS, CLEAR_TAGS, ADD_TAG, REMOVE_TAG } from "../../utils/constants";
 
 
 const initialState = {
-  tags: []
+  tags: [],
+  activeTags: []
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GET_ACTIVE_TAGS:
+    case GET_TAGS:
       return {
         ...state,
         tags: action.payload
@@ -19,12 +20,12 @@ export default (state = initialState, action) => {
     case ADD_TAG:
         return {
           ...state,
-          tags: state.tags.concat(action.payload)
+          activeTags: state.activeTags.concat(action.payload)
         };
     case REMOVE_TAG:
       return {
         ...state,
-        tags: state.tags.filter(tag => tag !== action.payload)
+        activeTags: state.activeTags.filter(tag => tag !== action.payload)
       }
     default:
       return state;

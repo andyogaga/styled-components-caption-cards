@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   SearchSection,
@@ -8,20 +8,35 @@ import {
   CaptionText,
   CaptionCardHeader,
   SearchButton,
-  SearchWrapper
+  SearchWrapper,
+  TagCard,
+  TagsContainer
 } from "../../components";
 import NavBar from "../../components/NavBar";
 
 const Home = props => {
-  const { captions } = props;
+  const { captions, getSearchedCaptions, activeTags } = props;
+  const [captionsLoading, setCaptionsLoading] = useState(false);
   return (
     <Container>
       <NavBar />
       <SearchSection>
         <SearchWrapper>
           <SearchInput placeholder="Enter Tags to Search" />
-          <SearchButton>Search</SearchButton>
+          <SearchButton
+            onClick={() => {
+              setCaptionsLoading(true);
+              getSearchedCaptions(() => setCaptionsLoading(false));
+            }}
+          >
+            {captionsLoading ? "Loading" : "Search"}
+          </SearchButton>
         </SearchWrapper>
+        <TagsContainer>
+          {activeTags && activeTags.length
+            ? activeTags.map(tag => <TagCard>{tag}</TagCard>)
+            : null}
+        </TagsContainer>
       </SearchSection>
       <CaptionsContainer>
         {captions.map(caption => (

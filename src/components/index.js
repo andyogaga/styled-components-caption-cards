@@ -142,6 +142,19 @@ export const SearchButton = styled.button`
   }
 `;
 
+
+export const TagsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media screen and (min-width: 724px){
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+`;
+
 export const TagCard = styled.div`
   background-color: ${PRI_COLOR};
   border-radius: 1rem;
