@@ -6,23 +6,31 @@ import {
   CaptionCard,
   CaptionsContainer,
   CaptionText,
-  CaptionCardHeader
+  CaptionCardHeader,
+  SearchButton,
+  SearchWrapper
 } from "../../components";
 import NavBar from "../../components/NavBar";
 
 const Home = () => {
-  const arr = [1, 2, 3, 4,5,4,3,3,3,3,3,3,4,4,4];
+  const arr = [1, 2, 3, 4, 5, 4, 3, 3, 3, 3, 3, 3, 4, 4, 4];
   return (
     <Container>
       <NavBar />
       <SearchSection>
-        <SearchInput placeholder="Enter Tags to Search" />
+        <SearchWrapper>
+          <SearchInput placeholder="Enter Tags to Search" />
+          <SearchButton>Search</SearchButton>
+        </SearchWrapper>
       </SearchSection>
       <CaptionsContainer>
         {arr.map(a => (
-          <CaptionCard key={a} >
+          <CaptionCard key={a}>
             <CaptionCardHeader>tag</CaptionCardHeader>
-            <CaptionText>This is my tag and i cannot shout oo This is my tag and i cannot shout oov This is my tag and i cannot shout oo</CaptionText>
+            <CaptionText>
+              This is my tag and i cannot shout oo This is my tag and i cannot
+              shout oov This is my tag and i cannot shout oo
+            </CaptionText>
           </CaptionCard>
         ))}
       </CaptionsContainer>

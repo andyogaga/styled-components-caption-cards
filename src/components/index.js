@@ -63,13 +63,38 @@ export const SearchSection = styled.div`
   }
 `;
 
+export const SearchWrapper = styled.div`
+width: 75%;
+height: 3rem;
+display: flex;
+justify-content: space-around;
+margin-left: 6rem;
+align-items: center;
+
+@media screen and ${breakpoints.sm} {
+  width: 100%;
+  align-self: center;
+  margin-left: 0rem;
+  margin: 2rem;
+  flex-direction: column;
+}
+@media screen and ${breakpoints.md} {
+  width: 100%;
+  align-self: center;
+  margin-left: 0rem;
+  margin: 2rem;
+  flex-direction: column;
+}
+`;
+
 export const SearchInput = styled.input`
-  width: 65%;
+  width: 75%;
   height: 3rem;
-  border-radius: 2rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
   border: 1px solid ${PRI_COLOR};
   font-color: ${PRI_COLOR};
-  margin-left: 6rem;
+  
   font-size: 1.5rem;
   padding: 0.5rem;
   padding-left: 2rem;
@@ -79,13 +104,40 @@ export const SearchInput = styled.input`
     width: 100%;
     align-self: center;
     margin-left: 0rem;
-    margin: 2rem;
+    border-radius: 2rem;
   }
   @media screen and ${breakpoints.md} {
     width: 100%;
     align-self: center;
     margin-left: 0rem;
-    margin: 2rem;
+    border-radius: 2rem;
+  }
+`;
+
+export const SearchButton = styled.button`
+  width: 25%;
+  height: 4rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border: 1px solid ${PRI_COLOR};
+  font-color: #fff;
+  margin-left: 0rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  padding-left: 0rem;
+  background-color: ${PRI_COLOR};
+
+  @media screen and ${breakpoints.sm} {
+    width: 60%;
+    align-self: center;
+    margin-top: 0.5rem;
+    border-radius: 2rem;
+  }
+  @media screen and ${breakpoints.md} {
+    width: 60%;
+    align-self: center;
+    margin-top: 0.5rem;
+    border-radius: 2rem;
   }
 `;
 
