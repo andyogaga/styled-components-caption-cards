@@ -22,7 +22,7 @@ export const createCaption = async (caption, tags, cb) => dispatch => {
       if(res){
         dispatch({
           type: CREATE_CAPTION,
-          payload: capton
+          payload: caption
         })
       }
     }
@@ -36,10 +36,11 @@ export const createCaption = async (caption, tags, cb) => dispatch => {
 export const getCaptions = async (cb) => dispatch => {
   try {
       const res = await callApi('/caption', null, 'GET')
-      if(res){
+      if(res && res.status === "success"){
+        const {data: {captions}} = res
         dispatch({
           type: CREATE_CAPTION,
-          payload: capton
+          payload: captions
         })
       }
   } catch (error) {

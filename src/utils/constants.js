@@ -1,3 +1,7 @@
+// Utils Constants
+export const PRI_COLOR = "#6c63ff";
+
+// Redux Constants
 export const GET_CAPTIONS = 'GET_CAPTIONS'
 export const CREATE_CAPTION = 'CREATE_CAPTION'
 export const CLEAR_CAPTIONS = 'CLEAR_CAPTIONS'
