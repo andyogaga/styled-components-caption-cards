@@ -1,17 +1,33 @@
-import React from 'react'
-import {Container} from '../../components'
-import NavBar from '../../components/NavBar'
+import React from "react";
+import {
+  Container,
+  SearchSection,
+  SearchInput,
+  CaptionCard,
+  CaptionsContainer,
+  CaptionText,
+  CaptionCardHeader
+} from "../../components";
+import NavBar from "../../components/NavBar";
 
 const Home = () => {
+  const arr = [1, 2, 3, 4,5,4,3,3,3,3,3,3,4,4,4];
   return (
     <Container>
       <NavBar />
-      <div >
-         <p>I am here</p>
-      </div>
-     
+      <SearchSection>
+        <SearchInput placeholder="Enter Tags to Search" />
+      </SearchSection>
+      <CaptionsContainer>
+        {arr.map(a => (
+          <CaptionCard key={a} >
+            <CaptionCardHeader>tag</CaptionCardHeader>
+            <CaptionText>This is my tag and i cannot shout oo This is my tag and i cannot shout oov This is my tag and i cannot shout oo</CaptionText>
+          </CaptionCard>
+        ))}
+      </CaptionsContainer>
     </Container>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
