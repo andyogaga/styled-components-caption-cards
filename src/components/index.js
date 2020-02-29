@@ -120,7 +120,8 @@ export const SearchButton = styled.button`
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
   border: 1px solid ${PRI_COLOR};
-  font-color: #fff;
+  color: #fff;
+  font-weight: bold;
   margin-left: 0rem;
   font-size: 1.5rem;
   padding: 0.5rem;
@@ -154,6 +155,11 @@ export const CaptionsContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media screen and (min-width: 724px){
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 `;
 
 export const CaptionCard = styled.div`
@@ -162,10 +168,10 @@ export const CaptionCard = styled.div`
   background-color: #fff;
   border-radius: 2rem;
   height: 18rem;
-  width: 20%;
-  margin: 1rem;
+  width: 18%;
+  margin: 0.8rem;
   min-width: 12rem;
-  box-shadow: 0 0 0.8rem 0.3rem ${PRI_COLOR_FADED};
+  box-shadow: 0 0 0.8rem 0.15rem ${PRI_COLOR_FADED};
   justify-content: center;
   align-items: center;
   padding: 1rem;

@@ -5,5 +5,5 @@ import captionReducer from "./reducers/caption.reducer";
 
 export default combineReducers({
   tags: tagReducer,
-  caption: captionReducer
+  captions: captionReducer
 });

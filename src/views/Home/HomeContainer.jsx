@@ -1,10 +1,27 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import {connect} from 'react-redux'
 import Home from './Home'
+import { getCaptions } from '../../store/actions/caption.actions';
 
-const HomeContainer = () => {
+const HomeContainer = props => {
+  const [isLoading, setIsLoading] = useState(true);
+  const {getCaptions, captions} = props
+
+  useEffect(() => {
+    getCaptions(() => setIsLoading(true))
+  }, [])
+
   return (
-    <Home />
+    <Home 
+      isLoading={isLoading}
+      captions={captions}
+    />
   )
 }
 
-export default HomeContainer
+const mapStateToProps = state => ({
+  captions: state.captions.captions,
+  
+})
+
+export default connect(mapStateToProps, {getCaptions})(HomeContainer)

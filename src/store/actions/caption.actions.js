@@ -1,7 +1,7 @@
 import { callApi } from "../../utils"
-import {CREATE_CAPTION} from '../../utils/constants'
+import {CREATE_CAPTION, GET_CAPTIONS} from '../../utils/constants'
 
-export const createCaption = async (caption, tags, cb) => dispatch => {
+export const createCaption = (caption, tags, cb) => async dispatch => {
   try {
     let res;
     if(Array.isArray(tags) && tags.length){
@@ -12,7 +12,7 @@ export const createCaption = async (caption, tags, cb) => dispatch => {
       if(res){
         dispatch({
           type: CREATE_CAPTION,
-          payload: capton
+          payload: caption
         })
       }
     } else {
@@ -33,13 +33,15 @@ export const createCaption = async (caption, tags, cb) => dispatch => {
   }
 }
 
-export const getCaptions = async (cb) => dispatch => {
+export const getCaptions =  cb => async dispatch => {
   try {
       const res = await callApi('/caption', null, 'GET')
+      
       if(res && res.status === "success"){
         const {data: {captions}} = res
+        console.log(captions)
         dispatch({
-          type: CREATE_CAPTION,
+          type: GET_CAPTIONS,
           payload: captions
         })
       }

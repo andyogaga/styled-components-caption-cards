@@ -12,8 +12,8 @@ import {
 } from "../../components";
 import NavBar from "../../components/NavBar";
 
-const Home = () => {
-  const arr = [1, 2, 3, 4, 5, 4, 3, 3, 3, 3, 3, 3, 4, 4, 4];
+const Home = props => {
+  const { captions } = props;
   return (
     <Container>
       <NavBar />
@@ -24,13 +24,14 @@ const Home = () => {
         </SearchWrapper>
       </SearchSection>
       <CaptionsContainer>
-        {arr.map(a => (
-          <CaptionCard key={a}>
-            <CaptionCardHeader>tag</CaptionCardHeader>
-            <CaptionText>
-              This is my tag and i cannot shout oo This is my tag and i cannot
-              shout oov This is my tag and i cannot shout oo
-            </CaptionText>
+        {captions.map(caption => (
+          <CaptionCard key={caption.id}>
+            {caption.tag ? (
+              <CaptionCardHeader>{caption.tag}</CaptionCardHeader>
+            ) : null}
+            {caption.caption ? (
+              <CaptionText>{caption.caption}</CaptionText>
+            ) : null}
           </CaptionCard>
         ))}
       </CaptionsContainer>
