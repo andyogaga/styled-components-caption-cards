@@ -15,6 +15,7 @@ import {
 } from "../../components";
 import styled from "styled-components";
 import { shape, string } from "prop-types";
+import Loader from "../../components/Loader";
 
 const TagCard = styled(CaptionCard)`
   height: auto;
@@ -38,6 +39,7 @@ const Tags = props => {
   return (
     <Container>
       <NavBar />
+      <Loader size="small"/>
       <MyTagContainer>
         {Array.isArray(tags) && tags.length
           ? tags.map((tag, i) => (
