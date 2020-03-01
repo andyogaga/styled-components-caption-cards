@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import {
   Container,
@@ -58,5 +59,11 @@ const Home = props => {
     </Container>
   );
 };
+
+Home.propTypes = {
+  activeTags: PropTypes.any,
+  captions: PropTypes.any,
+  getSearchedCaptions: PropTypes.any
+}
 
 export default Home;
