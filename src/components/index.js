@@ -24,32 +24,9 @@ export const Container = styled.div`
   }
 `;
 
-export const Navbar = styled.div`
-  width: 100%;
-  height: 3rem;
-  display: flex;
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
-  padding-left: 1rem;
-  padding-right: 0.3rem;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-`;
-
-export const LogoContainer = styled.div`
-  width: 3rem;
-  height: 100%;
-  background-color: ${PRI_COLOR};
-`;
-
-export const MenuContainer = styled.div`
-  width: 40%;
-  height: 100%;
-  background-color: green;
-`;
 export const SearchSection = styled.div`
   padding-top: 24vh;
+  width: 100%;
   padding-bottom: 25vh;
   display: flex;
   justify-content: flex-start;
@@ -58,29 +35,27 @@ export const SearchSection = styled.div`
 
   @media screen and ${breakpoints.sm} {
     justify-content: center;
+    width: 100%;
   }
   @media screen and ${breakpoints.md} {
     justify-content: center;
+    width: 100%;
   }
 `;
 
 export const SearchWrapper = styled.div`
-width: 75%;
-height: 3rem;
+width: 100%;
 display: flex;
-justify-content: space-around;
-margin-left: 6rem;
+justify-content: flex-start;
 align-items: center;
 
 @media screen and ${breakpoints.sm} {
-  width: 100%;
   align-self: center;
   margin-left: 0rem;
   margin: 2rem;
   flex-direction: column;
 }
 @media screen and ${breakpoints.md} {
-  width: 100%;
   align-self: center;
   margin-left: 0rem;
   margin: 2rem;
@@ -89,34 +64,38 @@ align-items: center;
 `;
 
 export const SearchInput = styled.input`
-  width: 75%;
+  width: 50%;
   height: 3rem;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
   border: 1px solid ${PRI_COLOR};
   font-color: ${PRI_COLOR};
-  
   font-size: 1.5rem;
   padding: 0.5rem;
   padding-left: 2rem;
   background-color: #fff;
+margin-left: 6rem;
 
   @media screen and ${breakpoints.sm} {
-    width: 100%;
+    width: 80%;
     align-self: center;
     margin-left: 0rem;
     border-radius: 2rem;
   }
   @media screen and ${breakpoints.md} {
-    width: 100%;
+    width: 80%;
     align-self: center;
     margin-left: 0rem;
     border-radius: 2rem;
   }
+
+  &:hover {
+    box-shadow: 0 0 0.8rem 0.1rem ${PRI_COLOR_FADED};
+  }
 `;
 
 export const SearchButton = styled.button`
-  width: 25%;
+  width: 15%;
   height: 4rem;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
@@ -130,13 +109,15 @@ export const SearchButton = styled.button`
   background-color: ${PRI_COLOR};
 
   @media screen and ${breakpoints.sm} {
-    width: 60%;
+    width: 40%;
+    height: 3rem;
     align-self: center;
     margin-top: 0.5rem;
     border-radius: 2rem;
   }
   @media screen and ${breakpoints.md} {
-    width: 60%;
+    width: 40%;
+    height: 3rem;
     align-self: center;
     margin-top: 0.5rem;
     border-radius: 2rem;
