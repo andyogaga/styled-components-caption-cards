@@ -12,7 +12,7 @@ import {
   EmptyContentText
 } from "../../components";
 import styled from "styled-components";
-import { shape, string, bool, func } from "prop-types";
+import { bool, func, array } from "prop-types";
 import Loader from "../../components/Loader";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -63,10 +63,11 @@ const Tags = props => {
           tag: ""
         }}
         validationSchema={tagValidation}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values, { setSubmitting, resetForm }) => {
           setAddTagLoading(true);
           createTagAlone(values.tag, () => {
             setSubmitting(false);
+            resetForm();
             setAddTagLoading(false);
           });
         }}
@@ -140,7 +141,7 @@ Tags.defaultProps = {
 };
 
 Tags.propTypes = {
-  tags: shape([string]),
+  tags: array,
   tagsLoading: bool,
   createTagAlone: func
 };

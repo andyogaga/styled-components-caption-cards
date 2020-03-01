@@ -88,9 +88,14 @@ export const createCaptionAlone = (caption, cb) => async dispatch => {
       "POST"
     );
     if (res.status === "success") {
+      const {id, caption: newC} = res.data;
+      const newCaption = {
+          id,
+          caption: newC
+        }
       dispatch({
         type: CREATE_CAPTION,
-        payload: caption
+        payload: newCaption
       });
     }
   } catch (error) {

@@ -12,7 +12,7 @@ import {
   EmptyContentText
 } from "../../components";
 import styled from "styled-components";
-import { shape, string, bool, func } from "prop-types";
+import { bool, func, array } from "prop-types";
 import Loader from "../../components/Loader";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -63,10 +63,11 @@ const Captions = props => {
           caption: ""
         }}
         validationSchema={captionValidation}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values, { setSubmitting, resetForm }) => {
           setAddCaptionLoading(true);
           createCaptionAlone(values.caption, () => {
             setSubmitting(false);
+            resetForm();
             setAddCaptionLoading(false);
           });
         }}
@@ -119,9 +120,9 @@ const Captions = props => {
       ) : (
         <MyCaptionContainer>
           {Array.isArray(captions) && captions.length ? (
-            captions.map((caption, i) => (
-              <NewCaptionCard key={i}>
-                <CaptionWrite>{caption}</CaptionWrite>
+            captions.map((caption) => (
+              <NewCaptionCard key={caption.id}>
+                <CaptionWrite>{caption.caption}</CaptionWrite>
               </NewCaptionCard>
             ))
           ) : (
@@ -140,7 +141,7 @@ Captions.defaultProps = {
 };
 
 Captions.propTypes = {
-  captions: shape([string]),
+  captions: array,
   captionsLoading: bool,
   createCaptionAlone: func
 };

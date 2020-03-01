@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { shape, string, func } from "prop-types";
+import { func, array } from "prop-types";
 import {
   Container,
   SearchSection,
@@ -76,11 +76,8 @@ Home.defaultProps = {
 };
 
 Home.propTypes = {
-  activeTags: shape([string]),
-  captions: shape({
-    tag: string,
-    caption: string
-  }),
+  activeTags: array,
+  captions: array,
   getSearchedCaptions: func
 };
 

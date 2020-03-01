@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Home from "./Home";
 import {
@@ -7,12 +7,10 @@ import {
   clearCaptions
 } from "../../store/actions/caption.actions";
 import { clearActiveTags } from "../../store/actions/tag.actions";
-import { func, shape, string } from "prop-types";
+import { func, array } from "prop-types";
 
 const HomeContainer = props => {
-  const [isLoading, setIsLoading] = useState(true);
   const {
-    getCaptions,
     getCaptionByTagId,
     activeCaptions,
     activeTags,
@@ -20,10 +18,7 @@ const HomeContainer = props => {
     clearCaptions
   } = props;
 
-  
-
   useEffect(() => {
-    
     return () => {
       clearActiveTags();
       clearCaptions();
@@ -38,7 +33,6 @@ const HomeContainer = props => {
 
   return (
     <Home
-      isLoading={isLoading}
       captions={activeCaptions}
       activeTags={activeTags}
       getSearchedCaptions={getSearchedCaptions}
@@ -65,8 +59,8 @@ HomeContainer.propTypes = {
   getCaptionByTagId: func,
   clearActiveTags: func,
   clearCaptions: func,
-  activeCaptions: shape([shape({})]),
-  activeTags: shape([string])
+  activeCaptions: array,
+  activeTags: array
 }
 
 export default connect(mapStateToProps, {

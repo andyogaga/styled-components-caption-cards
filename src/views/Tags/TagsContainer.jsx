@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Tags from './Tags'
 import { getTags, clearTags } from '../../store/actions/tag.actions'
 import { connect } from 'react-redux'
-import { func, shape, string } from 'prop-types'
+import { func, array } from 'prop-types'
 import { createTagAlone } from "../../store/actions/tag.actions";
 
 const TagsContainer = props => {
@@ -15,7 +15,7 @@ const TagsContainer = props => {
       clearTags()
     };
   }, [])
-  
+
   return (
     <Tags 
       tags={tags}
@@ -39,7 +39,7 @@ TagsContainer.defaultProps = {
 TagsContainer.propTypes = {
   getTags: func,
   clearTags: func,
-  tags: shape([string]),
+  tags: array,
   createTagAlone: func
 }
 
