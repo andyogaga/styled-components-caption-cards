@@ -14,14 +14,16 @@ const HomeContainer = props => {
   const {
     getCaptions,
     getCaptionByTagId,
-    captions,
+    activeCaptions,
     activeTags,
     clearActiveTags,
     clearCaptions
   } = props;
 
+  
+
   useEffect(() => {
-    getCaptions(() => setIsLoading(true));
+    
     return () => {
       clearActiveTags();
       clearCaptions();
@@ -37,7 +39,7 @@ const HomeContainer = props => {
   return (
     <Home
       isLoading={isLoading}
-      captions={captions}
+      captions={activeCaptions}
       activeTags={activeTags}
       getSearchedCaptions={getSearchedCaptions}
     />
@@ -45,7 +47,7 @@ const HomeContainer = props => {
 };
 
 const mapStateToProps = state => ({
-  captions: state.captions.captions,
+  activeCaptions: state.captions.activeCaptions,
   activeTags: state.tags.activeTags
 });
 
@@ -54,7 +56,7 @@ HomeContainer.defaultProps = {
   getCaptions: () => {},
   clearActiveTags: () => {},
   clearCaptions: () => {},
-  captions: [],
+  activeCaptions: [],
   activeTags: []
 }
 
@@ -63,7 +65,7 @@ HomeContainer.propTypes = {
   getCaptionByTagId: func,
   clearActiveTags: func,
   clearCaptions: func,
-  captions: shape([shape({})]),
+  activeCaptions: shape([shape({})]),
   activeTags: shape([string])
 }
 

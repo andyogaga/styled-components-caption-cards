@@ -2,7 +2,8 @@ import { GET_CAPTIONS, CLEAR_CAPTIONS, ADD_CAPTIONS } from "../../utils/constant
 
 
 const initialState = {
-  captions: []
+  captions: [],
+  activeCaptions: []
 }
 
 export default (state = initialState, action) => {
@@ -13,9 +14,10 @@ export default (state = initialState, action) => {
         captions: action.payload
       };
     case ADD_CAPTIONS:
+      console.log(action.payload)
         return {
           ...state,
-          captions: [...state.captions, ...action.payload]
+          activeCaptions: [...state.captions, ...action.payload]
         };
     case CLEAR_CAPTIONS:
       return {

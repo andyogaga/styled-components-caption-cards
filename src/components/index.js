@@ -44,23 +44,23 @@ export const SearchSection = styled.div`
 `;
 
 export const SearchWrapper = styled.div`
-width: 100%;
-display: flex;
-justify-content: flex-start;
-align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 
-@media screen and ${breakpoints.sm} {
-  align-self: center;
-  margin-left: 0rem;
-  margin: 2rem;
-  flex-direction: column;
-}
-@media screen and ${breakpoints.md} {
-  align-self: center;
-  margin-left: 0rem;
-  margin: 2rem;
-  flex-direction: column;
-}
+  @media screen and ${breakpoints.sm} {
+    align-self: center;
+    margin-left: 0rem;
+    margin: 2rem;
+    flex-direction: column;
+  }
+  @media screen and ${breakpoints.md} {
+    align-self: center;
+    margin-left: 0rem;
+    margin: 2rem;
+    flex-direction: column;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -74,7 +74,7 @@ export const SearchInput = styled.input`
   padding: 0.5rem;
   padding-left: 2rem;
   background-color: #fff;
-margin-left: 6rem;
+  margin-left: 6rem;
 
   @media screen and ${breakpoints.sm} {
     width: 80%;
@@ -125,7 +125,6 @@ export const SearchButton = styled.button`
   }
 `;
 
-
 export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -135,7 +134,7 @@ export const TagsContainer = styled.div`
   align-self: left;
   align-items: center;
 
-  @media screen and (min-width: 1030px){
+  @media screen and (min-width: 1030px) {
     margin-top: 1.5rem;
     align-self: flex-start;
     margin-left: 6rem;
@@ -175,7 +174,7 @@ export const CaptionsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 
-  @media screen and (min-width: 724px){
+  @media screen and (min-width: 724px) {
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -227,4 +226,11 @@ export const CaptionCardHeader = styled(CaptionText)`
     font-weight: bold;
     color: ${PRI_COLOR};
   }
+`;
+
+export const EmptyContentText = styled.p`
+  font-size: 2rem;
+  font-weight: bolder;
+  color: ${PRI_COLOR_FADED};
+  text-align: center;
 `;

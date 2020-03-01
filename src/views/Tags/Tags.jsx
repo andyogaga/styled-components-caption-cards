@@ -11,10 +11,11 @@ import {
   SearchButton,
   SearchWrapper,
   TagsContainer,
-  TagText
+  TagText,
+  EmptyContentText
 } from "../../components";
 import styled from "styled-components";
-import { shape, string } from "prop-types";
+import { shape, string, bool } from "prop-types";
 import Loader from "../../components/Loader";
 
 const TagCard = styled(CaptionCard)`
@@ -32,29 +33,40 @@ const TagWrite = styled(TagText)`
 
 const MyTagContainer = styled(CaptionsContainer)`
   margin: auto;
-`
+`;
 
 const Tags = props => {
-  const { tags } = props;
+  const { tags, tagsLoading } = props;
   return (
     <Container>
       <NavBar />
-      <Loader size="small"/>
-      <MyTagContainer>
-        {Array.isArray(tags) && tags.length
-          ? tags.map((tag, i) => (
+      {tagsLoading ? (
+        <Loader size="small" />
+      ) : (
+        <MyTagContainer>
+          {Array.isArray(tags) && tags.length ? (
+            tags.map((tag, i) => (
               <TagCard key={i}>
                 <TagWrite>{tag}</TagWrite>
               </TagCard>
             ))
-          : null}
-      </MyTagContainer>
+          ) : (
+            <EmptyContentText>No Tags Yet</EmptyContentText>
+          )}
+        </MyTagContainer>
+      )}
     </Container>
   );
 };
 
+Tags.defaultProps = {
+  tags: [],
+  tagsLoading: false
+}
+
 Tags.propTypes = {
   tags: shape([string]),
-}
+  tagsLoading: bool
+};
 
 export default Tags;
