@@ -3,20 +3,24 @@ import Tags from './Tags'
 import { getTags, clearTags } from '../../store/actions/tag.actions'
 import { connect } from 'react-redux'
 import { func, shape, string } from 'prop-types'
+import { createTagAlone } from "../../store/actions/tag.actions";
 
 const TagsContainer = props => {
-  const {getTags, clearTags, tags} = props
+  const {getTags, clearTags, tags, createTagAlone} = props
   const [tagsLoading, setTagsLoading] = useState(true)
+
   useEffect(() => {
     getTags(() => setTagsLoading(false))
     return () => {
       clearTags()
     };
   }, [])
+  
   return (
     <Tags 
       tags={tags}
       tagsLoading={tagsLoading}
+      createTagAlone={createTagAlone}
     />
   )
 }
@@ -28,13 +32,15 @@ const mapStateToProps = ({tags}) => ({
 TagsContainer.defaultProps = {
   getTags: () => {},
   clearTags: () => {},
+  createTagAlone: () => {},
   tags: []
 }
 
 TagsContainer.propTypes = {
   getTags: func,
   clearTags: func,
-  tags: shape([string])
+  tags: shape([string]),
+  createTagAlone: func
 }
 
-export default connect(mapStateToProps, {getTags, clearTags}) (TagsContainer)
+export default connect(mapStateToProps, {getTags, clearTags, createTagAlone}) (TagsContainer)

@@ -1,5 +1,11 @@
 import { callApi } from "../../utils";
-import { CREATE_CAPTION, GET_TAGS, CLEAR_ACTIVE_TAGS, CLEAR_TAGS } from "../../utils/constants";
+import {
+  CREATE_CAPTION,
+  GET_TAGS,
+  CLEAR_ACTIVE_TAGS,
+  CLEAR_TAGS,
+  CREATE_TAG
+} from "../../utils/constants";
 
 export const createTags = (caption, tags, cb) => async dispatch => {
   try {
@@ -41,6 +47,28 @@ export const createTags = (caption, tags, cb) => async dispatch => {
   }
 };
 
+export const createTagAlone = (tag, cb) => async dispatch => {
+  try {
+    const res = await callApi(
+      "/tag",
+      {
+        tag
+      },
+      "POST"
+    );
+    if (res.status === "success") {
+      dispatch({
+        type: CREATE_TAG,
+        payload: tag
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    cb();
+  }
+};
+
 export const getTags = cb => async dispatch => {
   try {
     const res = await callApi("/tag", null, "GET");
@@ -61,10 +89,12 @@ export const getTags = cb => async dispatch => {
   }
 };
 
-export const clearActiveTags = () => dispatch => dispatch({
-  type: CLEAR_ACTIVE_TAGS
-});
+export const clearActiveTags = () => dispatch =>
+  dispatch({
+    type: CLEAR_ACTIVE_TAGS
+  });
 
-export const clearTags = () => dispatch => dispatch({
-  type: CLEAR_TAGS
-});
+export const clearTags = () => dispatch =>
+  dispatch({
+    type: CLEAR_TAGS
+  });

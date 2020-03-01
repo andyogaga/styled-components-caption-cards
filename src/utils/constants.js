@@ -15,6 +15,7 @@ export const CLEAR_CAPTIONS = 'CLEAR_CAPTIONS'
 
 export const GET_TAGS = 'GET_TAGS'
 export const ADD_TAG = 'ADD_TAG'
+export const CREATE_TAG = 'CREATE_TAG'
 export const REMOVE_TAG = 'REMOVE_TAG'
 export const CLEAR_ACTIVE_TAGS = 'CLEAR_ACTIVE_TAGS'
 export const CLEAR_TAGS = 'CLEAR_TAGS'
