@@ -78,6 +78,28 @@ export const getCaptionByTagId =  (id, cb) => async dispatch => {
   }
 }
 
+export const createCaptionAlone = (caption, cb) => async dispatch => {
+  try {
+    const res = await callApi(
+      "/caption",
+      {
+        caption
+      },
+      "POST"
+    );
+    if (res.status === "success") {
+      dispatch({
+        type: CREATE_CAPTION,
+        payload: caption
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    cb();
+  }
+};
+
 export const clearCaptions = () => dispatch => dispatch({
   type: CLEAR_CAPTIONS
 });

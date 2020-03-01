@@ -3,6 +3,7 @@ import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 // core components
 import Home from "./views/Home/HomeContainer";
 import TagsContainer from "./views/Tags/TagsContainer";
+import CaptionsContainer from "./views/Captions/CaptionsContainer";
 // Error Boundary
 // import ErrorBoundary from "./components/ErrorBoundary.jsx";
 
@@ -13,6 +14,7 @@ class Routes extends Component {
         <Switch>
           <Route path="/home" component={Home} />
           <Route path="/tags" component={TagsContainer} />
+          <Route path="/captions" component={CaptionsContainer} />
           <Route path="/" component={Home} />
           <Redirect from="*" to="/" />
         </Switch>
