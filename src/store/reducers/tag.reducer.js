@@ -1,4 +1,4 @@
-import { GET_TAGS, CLEAR_TAGS, ADD_TAG, REMOVE_TAG } from "../../utils/constants";
+import { GET_TAGS, CLEAR_TAGS, ADD_TAG, REMOVE_TAG, CLEAR_ACTIVE_TAGS} from "../../utils/constants";
 
 
 const initialState = {
@@ -16,6 +16,11 @@ export default (state = initialState, action) => {
     case CLEAR_TAGS:
       return {
         ...initialState
+      };
+    case CLEAR_ACTIVE_TAGS:
+      return {
+        ...state,
+        activeTags: []
       };
     case ADD_TAG:
         return {

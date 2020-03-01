@@ -2,13 +2,18 @@ import React, {useState, useEffect} from 'react'
 import {connect} from 'react-redux'
 import Home from './Home'
 import { getCaptions, getCaptionByTagId } from '../../store/actions/caption.actions';
+import { clearActiveTags } from '../../store/actions/tag.actions';
+
 
 const HomeContainer = props => {
   const [isLoading, setIsLoading] = useState(true);
-  const {getCaptions, getCaptionByTagId, captions, activeTags} = props
+  const {getCaptions, getCaptionByTagId, captions, activeTags, clearActiveTags} = props
 
   useEffect(() => {
     getCaptions(() => setIsLoading(true))
+    return () => {
+      clearActiveTags()
+    }
   }, [])
 
   const getSearchedCaptions = cb => {
@@ -32,4 +37,4 @@ const mapStateToProps = state => ({
   activeTags: state.tags.activeTags
 })
 
-export default connect(mapStateToProps, {getCaptions, getCaptionByTagId})(HomeContainer)
+export default connect(mapStateToProps, {getCaptions, getCaptionByTagId, clearActiveTags})(HomeContainer)

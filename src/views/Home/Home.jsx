@@ -10,7 +10,8 @@ import {
   SearchButton,
   SearchWrapper,
   TagCard,
-  TagsContainer
+  TagsContainer,
+  TagText
 } from "../../components";
 import NavBar from "../../components/NavBar";
 
@@ -34,12 +35,16 @@ const Home = props => {
         </SearchWrapper>
         <TagsContainer>
           {activeTags && activeTags.length
-            ? activeTags.map(tag => <TagCard>{tag}</TagCard>)
+            ? activeTags.map(tag => (
+                <TagCard>
+                  <TagText>{tag}</TagText>
+                </TagCard>
+              ))
             : null}
         </TagsContainer>
       </SearchSection>
       <CaptionsContainer>
-        {captions.map(caption => (
+        {captions.slice(0, 16).map(caption => (
           <CaptionCard key={caption.id}>
             {caption.tag ? (
               <CaptionCardHeader>{caption.tag}</CaptionCardHeader>

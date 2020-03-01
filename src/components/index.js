@@ -130,19 +130,42 @@ export const TagsContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin-top: 1.5rem;
+  align-self: left;
+  align-items: center;
 
-  @media screen and (min-width: 724px){
-    padding-left: 2rem;
-    padding-right: 2rem;
+  @media screen and (min-width: 1030px){
+    margin-top: 1.5rem;
+    align-self: flex-start;
+    margin-left: 6rem;
+  }
+
+  @media screen and ${breakpoints.sm} {
+    align-self: center;
+    margin-top: 0.5rem;
+  }
+  @media screen and ${breakpoints.md} {
+    align-self: center;
+    margin-top: 0.5rem;
   }
 `;
 
 export const TagCard = styled.div`
+  display: flex;
   background-color: ${PRI_COLOR};
   border-radius: 1rem;
-  height: 1.8rem;
+  height: 1.5rem;
   min-width: 5rem;
   max-width: 12rem;
+  padding: 0.3rem;
+  margin: 0.5rem;
+  align-self: center;
+`;
+
+export const TagText = styled.p`
+  color: #fff;
+  margin: auto;
+  margin-left: 0rem;
 `;
 
 export const CaptionsContainer = styled.div`
