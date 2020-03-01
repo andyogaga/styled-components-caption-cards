@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 // core components
 import Home from "./views/Home/HomeContainer";
+import TagsContainer from "./views/Tags/TagsContainer";
 // Error Boundary
 // import ErrorBoundary from "./components/ErrorBoundary.jsx";
 
@@ -11,6 +12,7 @@ class Routes extends Component {
       // <ErrorBoundary>
         <Switch>
           <Route path="/home" component={Home} />
+          <Route path="/tags" component={TagsContainer} />
           <Route path="/" component={Home} />
           <Redirect from="*" to="/" />
         </Switch>

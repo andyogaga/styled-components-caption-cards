@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
 import React, { useState } from "react";
+import { shape, string } from "prop-types";
 import {
   Container,
   SearchSection,
@@ -60,10 +60,22 @@ const Home = props => {
   );
 };
 
+Home.defaultProps = {
+  activeTags: [],
+  captions: {
+    tag: '',
+    caption: ''
+  },
+  getSearchedCaptions: () => {}
+}
+
 Home.propTypes = {
-  activeTags: PropTypes.any,
-  captions: PropTypes.any,
-  getSearchedCaptions: PropTypes.any
+  activeTags: shape([string]),
+  captions: shape({
+    tag: string,
+    caption: string
+  }),
+  getSearchedCaptions: func
 }
 
 export default Home;
