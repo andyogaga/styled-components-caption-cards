@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { shape, string } from "prop-types";
+import { shape, string, func } from "prop-types";
 import {
   Container,
   SearchSection,

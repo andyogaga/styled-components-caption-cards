@@ -1,4 +1,4 @@
-import { GET_CAPTIONS, CLEAR_CAPTIONS } from "../../utils/constants";
+import { GET_CAPTIONS, CLEAR_CAPTIONS, ADD_CAPTIONS } from "../../utils/constants";
 
 
 const initialState = {
@@ -12,6 +12,11 @@ export default (state = initialState, action) => {
         ...state,
         captions: action.payload
       };
+    case ADD_CAPTIONS:
+        return {
+          ...state,
+          captions: [...state.captions, ...action.payload]
+        };
     case CLEAR_CAPTIONS:
       return {
         ...initialState

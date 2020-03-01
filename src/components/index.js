@@ -97,6 +97,7 @@ margin-left: 6rem;
 export const SearchButton = styled.button`
   width: 15%;
   height: 4rem;
+  cursor: pointer;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
   border: 1px solid ${PRI_COLOR};

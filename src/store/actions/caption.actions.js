@@ -1,5 +1,5 @@
 import { callApi } from "../../utils"
-import {CREATE_CAPTION, GET_CAPTIONS, ADD_TAG} from '../../utils/constants'
+import {CREATE_CAPTION, GET_CAPTIONS, ADD_TAG, ADD_CAPTIONS, CLEAR_CAPTIONS} from '../../utils/constants'
 
 export const createCaption = (caption, tags, cb) => async dispatch => {
   try {
@@ -63,7 +63,7 @@ export const getCaptionByTagId =  (id, cb) => async dispatch => {
           }
         })
         dispatch({
-          type: GET_CAPTIONS,
+          type: ADD_CAPTIONS,
           payload: newCaptions
         })
         dispatch({
@@ -77,3 +77,7 @@ export const getCaptionByTagId =  (id, cb) => async dispatch => {
     cb()
   }
 }
+
+export const clearCaptions = () => dispatch => dispatch({
+  type: CLEAR_CAPTIONS
+});

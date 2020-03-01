@@ -9,6 +9,7 @@ export const breakpoints = {
 
 // Redux Constants
 export const GET_CAPTIONS = 'GET_CAPTIONS'
+export const ADD_CAPTIONS = 'ADD_CAPTIONS'
 export const CREATE_CAPTION = 'CREATE_CAPTION'
 export const CLEAR_CAPTIONS = 'CLEAR_CAPTIONS'
 

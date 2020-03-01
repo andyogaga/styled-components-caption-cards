@@ -15,7 +15,8 @@ export default (state = initialState, action) => {
       };
     case CLEAR_TAGS:
       return {
-        ...initialState
+        ...state,
+        tags: []
       };
     case CLEAR_ACTIVE_TAGS:
       return {

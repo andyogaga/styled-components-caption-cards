@@ -33,12 +33,6 @@ const MenuContainer = styled.div`
   }
 `;
 
-const Menu = styled.div`
-  @media (min-width: 700px) {
-    display: none;
-  }
-`;
-
 const Mobile = styled.div`
   @media (min-width: 700px) {
     display: none;
@@ -146,8 +140,8 @@ const NavBar = props => {
           </Button>
           <UL className={!menuOpen && 'hide'}>
             <MenuLink exact activeClassName="active" to="/">Home</MenuLink>
-            <MenuLink activeClassName="active" to="/work">Work</MenuLink>
-            <MenuLink activeClassName="active" to="/contact">Contact</MenuLink>
+            <MenuLink activeClassName="active" to="/tags">Tags</MenuLink>
+            <MenuLink activeClassName="active" to="/captions">Captions</MenuLink>
           </UL>
         </Mobile>
         <Link exact activeClassName="active" to="/">
