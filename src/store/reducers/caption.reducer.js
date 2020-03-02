@@ -20,12 +20,12 @@ export default (state = initialState, action) => {
     case ADD_CAPTIONS:
       return {
         ...state,
-        activeCaptions: state.activeCaptions.concat(action.payload)
+        activeCaptions: [...action.payload, ...state.activeCaptions]
       };
     case CREATE_CAPTION:
       return {
         ...state,
-        captions: [...state.captions, action.payload]
+        captions: [action.payload, ...state.captions]
       };
     case CLEAR_CAPTIONS:
       return {

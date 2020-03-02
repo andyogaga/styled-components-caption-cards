@@ -32,12 +32,12 @@ export default (state = initialState, action) => {
     case ADD_TAG:
       return {
         ...state,
-        activeTags: state.activeTags.concat(action.payload)
+        activeTags: [...state.activeTags, action.payload]
       };
     case CREATE_TAG:
       return {
         ...state,
-        tags: [...state.tags, action.payload]
+        tags: [action.payload, ...state.tags]
       };
     case REMOVE_TAG:
       return {

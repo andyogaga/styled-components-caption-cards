@@ -245,11 +245,11 @@ export const CaptionText = styled.p`
 
 export const CaptionCardHeader = styled(CaptionText)`
   margin-block-end: 0rem;
+  color: rgba(0,0,0,0.9);
   &:first-letter {
     text-transform: uppercase;
     font-size: 1.3rem;
-    font-weight: bold;
-    color: ${PRI_COLOR};
+    font-weight: normal;
   }
 `;
 

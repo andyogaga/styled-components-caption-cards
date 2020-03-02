@@ -59,6 +59,7 @@ export const getCaptionByTagId =  (id, cb) => async dispatch => {
         const newCaptions = captions.map((caption, i) => {
           return {
             id: i,
+            tag,
             caption
           }
         })
