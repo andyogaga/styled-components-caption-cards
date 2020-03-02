@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 // core components
-import Home from "./views/Home/HomeContainer";
 import TagsContainer from "./views/Tags/TagsContainer";
 import CaptionsContainer from "./views/Captions/CaptionsContainer";
+import Home from "./views/Home/HomeContainer";
 // Error Boundary
 // import ErrorBoundary from "./components/ErrorBoundary.jsx";
 

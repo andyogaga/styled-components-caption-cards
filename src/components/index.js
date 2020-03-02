@@ -1,12 +1,38 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { PRI_COLOR, breakpoints, PRI_COLOR_FADED } from "../utils/constants";
 import Design from "../assets/img/design.jpg";
+
+
+export const slideFadeInUp = keyframes`
+from {
+  opacity: 0;
+  transform: translate3d(0, 70%, 0);
+  visibility: visible;
+}
+
+to {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+`;
+
+export const slideInUp = keyframes`
+from {
+  transform: translate3d(0, 70%, 0);
+  visibility: visible;
+}
+
+to {
+  transform: translate3d(0, 0, 0);
+}
+`;
 
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-bottom: 10vh;
   background-color: #f9f9f9;
   overflow-x: hidden;
   overflow-y: auto;
@@ -25,9 +51,9 @@ export const Container = styled.div`
 `;
 
 export const SearchSection = styled.div`
-  padding-top: 24vh;
+  padding-top: 16vh;
   width: 100%;
-  padding-bottom: 25vh;
+  padding-bottom: 15vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -48,6 +74,7 @@ export const SearchWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  animation: ${slideInUp} 1.2s ease-in;
 
   @media screen and ${breakpoints.sm} {
     align-self: center;
@@ -193,7 +220,7 @@ export const CaptionCard = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  animation-duration: 4s;
+  animation: ${slideFadeInUp} 1.2s linear;
 
   &:hover {
     box-shadow: 0 0 0.5rem 0.4rem ${PRI_COLOR_FADED};
@@ -202,13 +229,6 @@ export const CaptionCard = styled.div`
   @media screen and ${breakpoints.sm} {
     width: 100%;
     align-self: center;
-  }
-
-  @keyframes {
-    0%   { width: 9%;}
-    25%  { width: 12%;}
-    50%  { width: 15%;}
-    100% { width: 18%;}
   }
 `;
 
