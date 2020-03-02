@@ -48,7 +48,7 @@ const Home = props => {
       </SearchSection>
       <CaptionsContainer>
         {Array.isArray(captions) && captions.length ? (
-          captions.slice(0, 16).map(caption => (
+          captions.map(caption => (
             <CaptionCard key={caption.id}>
               {caption.tag ? (
                 <CaptionCardHeader>{caption.tag}</CaptionCardHeader>

@@ -193,6 +193,7 @@ export const CaptionCard = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  animation-duration: 4s;
 
   &:hover {
     box-shadow: 0 0 0.5rem 0.4rem ${PRI_COLOR_FADED};
@@ -201,6 +202,13 @@ export const CaptionCard = styled.div`
   @media screen and ${breakpoints.sm} {
     width: 100%;
     align-self: center;
+  }
+
+  @keyframes {
+    0%   { width: 9%;}
+    25%  { width: 12%;}
+    50%  { width: 15%;}
+    100% { width: 18%;}
   }
 `;
 

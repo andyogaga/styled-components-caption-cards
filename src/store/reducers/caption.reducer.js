@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
     case ADD_CAPTIONS:
       return {
         ...state,
-        activeCaptions: [...state.captions, ...action.payload]
+        activeCaptions: state.activeCaptions.concat(action.payload)
       };
     case CREATE_CAPTION:
       return {
