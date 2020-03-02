@@ -55,7 +55,7 @@ export const SearchSection = styled.div`
   width: 100%;
   padding-bottom: 15vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 
@@ -72,7 +72,7 @@ export const SearchSection = styled.div`
 export const SearchWrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   animation: ${slideInUp} 1.2s ease-in;
 
@@ -101,18 +101,15 @@ export const SearchInput = styled.input`
   padding: 0.5rem;
   padding-left: 2rem;
   background-color: #fff;
-  margin-left: 6rem;
 
   @media screen and ${breakpoints.sm} {
     width: 80%;
     align-self: center;
-    margin-left: 0rem;
     border-radius: 2rem;
   }
   @media screen and ${breakpoints.md} {
     width: 80%;
     align-self: center;
-    margin-left: 0rem;
     border-radius: 2rem;
   }
 
