@@ -69,9 +69,9 @@ const Spinner = styled.div`
 const Loader = ({ size, color = PRI_COLOR }) => (
   <Container size={size}>
     {size ? (
-      <Spinner className={`lds-hourglass-${size}`} small color={color} />
+      <Spinner data-testid="loader" className={`lds-hourglass-${size}`} small color={color} />
     ) : (
-      <Spinner className="lds-hourglass" color={color}/>
+      <Spinner data-testid="loader" className="lds-hourglass" color={color}/>
     )}
   </Container>
 );
