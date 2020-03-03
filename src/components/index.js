@@ -129,7 +129,7 @@ export const SearchButton = styled.button`
   color: #fff;
   font-weight: bold;
   margin-left: 0rem;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   padding: 0.5rem;
   padding-left: 0rem;
   background-color: ${PRI_COLOR};
@@ -140,6 +140,7 @@ export const SearchButton = styled.button`
     align-self: center;
     margin-top: 0.5rem;
     border-radius: 2rem;
+    font-size: 1rem;
   }
   @media screen and ${breakpoints.md} {
     width: 40%;
@@ -147,6 +148,7 @@ export const SearchButton = styled.button`
     align-self: center;
     margin-top: 0.5rem;
     border-radius: 2rem;
+    font-size: 1rem;
   }
 `;
 

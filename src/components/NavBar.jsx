@@ -55,9 +55,10 @@ const UL = styled.ul`
   border-radius: 0 0 3px 3px;
   display: flex;
   flex-direction: column;
+  background-color: #fff;
   font-size: 1.25em;
   margin-top: 0;
-  opacity: 0.7;
+  opacity: 1;
   padding-left: 0;
   position: relative;
   transform: none;
@@ -123,7 +124,7 @@ const LOGO = styled(Logo)`
   height: 4rem;
 `
 
-const NavBar = props => {
+const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const handleMobileMenuClick = () => {
     setMenuOpen(!menuOpen)

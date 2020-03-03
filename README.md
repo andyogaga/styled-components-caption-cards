@@ -42,8 +42,6 @@ https://capcards-api.herokuapp.com/v1.0/api/caption/
 GET Get Captions under Tag
 https://capcards-api.herokuapp.com/v1.0/api/caption/withTag?tagId=2
 
-POST Get Caption with multiple Tags
-https://capcards-api.herokuapp.com/v1.0/api/tag/array
 ```
 
 # Packages used
