@@ -1,78 +1,8 @@
 import axios from "axios";
-import configureStore from './../configureStore';
-
-const { store: { dispatch } } = configureStore;
-
 
 export const config = {
   fetchUrl: "https://capcards-api.herokuapp.com/v1.0/api"
 };
-
-// axios.interceptors.response.use(response => {
-//   return response
-// }, error => {
-//   const shouldRetry = shouldRetryRequest(error)
-//   let originalRequest = error.config
-//   if (shouldRetry) {
-//     if (!error.response) {
-//       originalRequest.noResponseRetry = true
-//     } else {
-//       originalRequest.retry = true
-//     }
-//     return axios(originalRequest)
-//   }
-
-//   // Timeout
-//   if (error.code === 'ECONNABORTED') {
-//     dispatch({
-//       type: SHOW_FEEDBACK,
-//       color: 'danger',
-//       message: "It seems you are Offline",
-//       id: Math.floor(Math.random() * 100),
-//     });
-//     return Promise.reject(error)
-//   }
-//   // Offline
-//   if (!error.response) {
-//     dispatch({
-//       type: SHOW_FEEDBACK,
-//       color: 'danger',
-//       message: "It seems you are Offline",
-//       id: Math.floor(Math.random() * 100),
-//     });
-//     return Promise.reject(error)
-//   }
-//   // Unauthorized
-//   if (error.response.status === 401) {
-//     dispatch({
-//       type: SHOW_FEEDBACK,
-//       color: 'danger',
-//       message: "Unauthorized Access",
-//       id: Math.floor(Math.random() * 100),
-//     });
-//     return Promise.reject(error)
-//   }
-//   // Server
-//   if (error.response.status >= 500) {
-//     dispatch({
-//       type: SHOW_FEEDBACK,
-//       color: 'danger',
-//       message: "We have an issue and we are presently looking into it",
-//       id: Math.floor(Math.random() * 100),
-//     });
-//     Sentry.captureException(error);
-//     return Promise.reject(error)
-//   }
-
-//   dispatch({
-//     type: SHOW_FEEDBACK,
-//     color: 'danger',
-//     message: error.response && error.response.data && error.response.data.message ? error.response.data.message : "We have an issue and we are presently looking into it",
-//     id: Math.floor(Math.random() * 100),
-//   });
-
-//   return Promise.reject(error)
-// });
 
 const callPlainApi = (url, data, method) => {
   let axiosOptions = {
