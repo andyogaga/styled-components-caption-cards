@@ -114,7 +114,6 @@ describe("Home Tests", () => {
       queryByText,
       queryByPlaceholderText,
       queryAllByText,
-      debug
     } = renderWithReduxAndRouter(
       <Home
         clearActiveTags={mockClearActiveTags}

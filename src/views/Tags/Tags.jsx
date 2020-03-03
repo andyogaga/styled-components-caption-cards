@@ -17,7 +17,7 @@ import Loader from "../../components/Loader";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-const TagCard = styled(CaptionCard)`
+const NewTagCard = styled(CaptionCard)`
   height: auto;
   min-height: 6rem;
 `;
@@ -120,10 +120,10 @@ const Tags = props => {
       ) : (
         <MyTagContainer>
           {Array.isArray(tags) && tags.length ? (
-            tags.map((tag, i) => (
-              <TagCard key={i}>
+            tags.map((tag) => (
+              <NewTagCard key={tag}>
                 <TagWrite>{tag}</TagWrite>
-              </TagCard>
+              </NewTagCard>
             ))
           ) : (
             <EmptyContentText>No Tags Yet</EmptyContentText>

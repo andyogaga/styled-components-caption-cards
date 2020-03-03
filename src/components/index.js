@@ -60,12 +60,13 @@ export const SearchSection = styled.div`
   flex-direction: column;
 
   @media screen and ${breakpoints.sm} {
-    justify-content: center;
-    width: 100%;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
   }
+
   @media screen and ${breakpoints.md} {
-    justify-content: center;
-    width: 100%;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
   }
 `;
 
@@ -153,15 +154,14 @@ export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
+  margin: auto;
   margin-top: 1.5rem;
-  align-self: left;
   align-items: center;
 
   @media screen and (min-width: 1030px) {
     margin-top: 1.5rem;
-    align-self: flex-start;
-    margin-left: 6rem;
+    align-self: center;
   }
 
   @media screen and ${breakpoints.sm} {
@@ -184,6 +184,7 @@ export const TagCard = styled.div`
   padding: 0.3rem;
   margin: 0.5rem;
   align-self: center;
+  animation: ${slideInUp} 0.8s linear;
 `;
 
 export const TagText = styled.p`
@@ -217,7 +218,7 @@ export const CaptionCard = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  animation: ${slideFadeInUp} 1.2s linear;
+  animation: ${slideInUp} 1.2s linear;
 
   &:hover {
     box-shadow: 0 0 0.5rem 0.4rem ${PRI_COLOR_FADED};
